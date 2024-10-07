@@ -1,5 +1,5 @@
 
-# Greedy decoding
+## Greedy decoding
 
 ![](./1.png)
 
@@ -24,11 +24,9 @@
 
 
 
-#### почему не работает speculative decoding (https://arxiv.org/pdf/2302.01318) 
+## Почему не работает speculative decoding (https://arxiv.org/pdf/2302.01318) 
 
 ![](./2.png)
-
-
 
 ![](./3.png)
 
@@ -155,7 +153,7 @@ Resampled next token = Cat
 
 
 
-#### Доказательство работы без ошибок Blockwise Parallel Decoding (https://arxiv.org/pdf/1811.03115)
+## Доказательство работы без ошибок Blockwise Parallel Decoding (https://arxiv.org/pdf/1811.03115)
 
 
 
@@ -245,8 +243,6 @@ accepted_tokens= tensor([0, 0, 0])
 
 ### Пример работы алгоритма от deepmind
 
-
- {.cell .code execution_count="3"}
 ``` python
 from transformers import (
     AutoModelForSeq2SeqLM,
@@ -662,7 +658,7 @@ q.item(), p.item() 0.686094343662262 0.9647515416145325
 
 
 
-### Use default methods from huggingface
+## Пример того как это работает в huggingface
 
 
 
@@ -838,7 +834,7 @@ for _ in range(10):
 
 
 
-### Имплементация алгоритма от google, для huggingface encoder-decoder архитекруры
+## Имплементация алгоритма от google, для huggingface encoder-decoder архитекруры
 
 
 
@@ -847,8 +843,6 @@ from torch.nn.functional import scaled_dot_product_attention
 from torch.nn.attention import SDPBackend, sdpa_kernel
 from transformers.cache_utils import DynamicCache
 import os
-
-os.environ["PYDEVD_WARN_SLOW_RESOLVE_TIMEOUT"] = "1000000"
 
 
 # copy from huggingface
